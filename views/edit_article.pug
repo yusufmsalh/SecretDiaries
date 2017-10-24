@@ -1,0 +1,16 @@
+extends Sharedlayout
+block content
+    h1 #{title}
+    form(method = 'POST', action='/articles/edit/'+article._id)
+      #form-group
+       label Title
+       input.form-control(name='title',type='text',value= article.title)
+       label Author
+       input.form-control(name='author',type='text',value= article.author)
+       label Content
+       textarea.form-control(name='body',type='text')= article.body
+       br
+       #form-group
+       input.btn.btn-primary(type='submit',value='Sumbit')
+
+    
